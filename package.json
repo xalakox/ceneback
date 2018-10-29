@@ -1,0 +1,31 @@
+{
+  "name": "ceneback",
+  "version": "1.0.0",
+  "description": "backend for cenefont teacher feedback moderation tool blob",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "startdev": "nodemon index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xalakox/ceneback.git"
+  },
+  "author": "Salvador Aceves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xalakox/ceneback/issues"
+  },
+  "homepage": "https://github.com/xalakox/ceneback#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.1",
+    "nodemon": "^1.18.5",
+    "sequelize": "^4.41.0",
+    "sequelize-cli": "^5.2.0"
+  }
+}
