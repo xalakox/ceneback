@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
     },
   }, {});
-  Comentarios.associate = function(models) {
+  Comentarios.associate = (models) => {
     // associations can be defined here
-    Comentarios.belongsTo(models.Profesores, {foreignKey: 'FK_profesor'});
-    Comentarios.belongsTo(models.Autores, {foreignKey: 'FK_autor'});
+    Comentarios.belongsTo(models.Profesores, { foreignKey: 'FK_profesor' });
+    Comentarios.belongsTo(models.Autores, { foreignKey: 'FK_autor' });
   };
   return Comentarios;
 };

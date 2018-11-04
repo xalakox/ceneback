@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -26,5 +26,5 @@ module.exports = {
   down: async (queryInterface, Sequelize) => {
     await queryInterface.deleteConstraint('Comentarios', 'FK_profesor');
     await queryInterface.deleteConstraint('Comentarios', 'FK_autor');
-  }
+  },
 };
