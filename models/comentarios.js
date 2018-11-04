@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Comentarios = sequelize.define('Comentarios', {
     id: {
@@ -8,7 +8,15 @@ module.exports = (sequelize, DataTypes) => {
     profesor: DataTypes.UUID,
     autor: DataTypes.STRING,
     comentario: DataTypes.TEXT,
-    contenidoInadecuado: DataTypes.BOOLEAN
+    contenidoInadecuado: DataTypes.BOOLEAN,
+    createdAt: {
+      type: DataTypes.DATE(3),
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)'),
+    },
+    updatedAt: {
+      type: DataTypes.DATE(3),
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
+    },
   }, {});
   Comentarios.associate = function(models) {
     // associations can be defined here
