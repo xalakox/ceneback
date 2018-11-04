@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Comentarios.associate = function(models) {
     // associations can be defined here
+    Comentarios.belongsTo(models.Profesores, {foreignKey: 'FK_profesor'});
+    Comentarios.belongsTo(models.Autores, {foreignKey: 'FK_autor'});
   };
   return Comentarios;
 };
