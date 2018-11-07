@@ -7,16 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     calificacion: DataTypes.INTEGER,
     createdAt: {
       type: DataTypes.DATE(3),
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)'),
     },
     updatedAt: {
       type: DataTypes.DATE(3),
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
     },
   }, {});
   Evaluaciones.associate = (models) => {
-    Evaluaciones.belongsTo(models.Profesores, { foreignKey: 'FK_eval_profesor' });
-    Evaluaciones.belongsTo(models.Autores, { foreignKey: 'FK_eval_autor' });
+    Evaluaciones.belongsTo(models.Profesores, { foreignKey: 'profesor' });
+    Evaluaciones.belongsTo(models.Autores, { foreignKey: 'autorEmail' });
   };
   return Evaluaciones;
 };

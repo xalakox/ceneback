@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "startdev": "nodemon index.js",
+    "startdev": "nodemon -L index.js",
     "test": "jest"
   },
   "repository": {
@@ -17,13 +17,31 @@
   "bugs": {
     "url": "https://github.com/xalakox/ceneback/issues"
   },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "globalSetup": "./tests/setup.js"
+  },
   "homepage": "https://github.com/xalakox/ceneback#readme",
   "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "faker": "^4.1.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "shelljs": "^0.8.2",
+    "supertest": "^3.3.0"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
     "mysql2": "^1.6.1",
     "nodemon": "^1.18.5",
     "sequelize": "^4.41.0",
