@@ -11,10 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     passwordHash: DataTypes.STRING,
     password: {
       type: DataTypes.VIRTUAL,
-      set: async (val) => {
-        this.setDataValue('password', val);
-        this.setDataValue('passwordHash', (await bcrypt.hash(val, 5)));
-      },
       validate: {
         isLongEnough(val) {
           if (val.length < 7) {
@@ -29,7 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE(3),
     },
-  }, {});
+  }, {
+    hooks: {
+      beforeCreate: async (autor) => {
+        autor.passwordHash = (await bcrypt.hash(autor.password, 5));
+      },
+    },
+  });
   Autores.associate = function (models) {
     // associations can be defined here
   };

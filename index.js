@@ -25,6 +25,9 @@ const checkAuthorToken = (req, res, next) => {
 
 // rutas publicas
 app.get('/', (req, res) => res.send('Ok'));
+app.post('/autores/registrar', autoresController.register);
+app.get('/autores/confirmarRegistro/:signUpToken', autoresController.confirmRegistration);
+app.post('/autores/confirmarRegistro/:signUpToken', autoresController.confirmRegistration);
 app.post('/autores/login', autoresController.loginAutor);
 app.get('/profesores', profesoresController.getAll);
 

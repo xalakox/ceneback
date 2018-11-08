@@ -1,15 +1,13 @@
 /* globals describe test expect beforeAll */
 
 const request = require('supertest');
-const shell = require('shelljs');
 const faker = require('faker');
 
 const app = require('../index');
 const profesores = require('../node_modules/profesores_prueba.json');
 const autores = require('../node_modules/autores_prueba.json');
 
-
-describe('Pruebas del controlador profesores', () => {
+describe('controlador profesores', () => {
   test('deberia poder obtener el listado de profesores', async () => {
     await request(app).get('/profesores').then((response) => {
       expect(response.statusCode).toBe(200);
@@ -29,7 +27,7 @@ describe('Pruebas del controlador profesores', () => {
     expect(loginResponse.body).toHaveProperty('token');
     const { token } = loginResponse.body;
 
-    // calificamos un profesor
+    // calificamos a un profesor
     const profesor = profesores[faker.random.number({ min: 0, max: (profesores.length - 1) })].id;
     const response = await request(app).post('/profesores/evaluar')
       .auth('', token)

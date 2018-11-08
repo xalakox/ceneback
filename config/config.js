@@ -6,6 +6,7 @@ module.exports = {
     database: process.env.DATABASE_NAME || 'cenedb_dev',
     host: process.env.DATABASE_HOST || 'cenedata',
     dialect: 'mysql',
+    logging: false,
   },
   test: {
     username: process.env.DATABASE_USER || 'root',
@@ -13,6 +14,7 @@ module.exports = {
     database: process.env.DATABASE_NAME || 'cenedb_dev',
     host: process.env.DATABASE_HOST || 'cenedata',
     dialect: 'mysql',
+    logging: false,
   },
   production: {
     username: process.env.DATABASE_USER,
@@ -20,5 +22,6 @@ module.exports = {
     database: process.env.DATABASE_NAME,
     host: process.env.DATABASE_HOST,
     dialect: 'mysql',
+    logging: false,
   },
 };
