@@ -12,6 +12,7 @@ jobs:
           URLFRONTEND: http://localhost:1234
           EMAILSENDER: donotreply@aceves.mx
           DATABASE_HOST: 127.0.0.1
+          PRIVATE_KEY: d3beriascambiarestallavePOrqueNoEsSegurayAsi!!@
     
       - image: tkuchiki/delayed-mysql
         environment:
