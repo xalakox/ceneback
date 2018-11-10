@@ -9,12 +9,11 @@ de institucion educativa.
 
 ### Correos de confirmación
 
-Es necesario conter con una cuenta www.sendgrid.com, gratuita para hasta
-100 correos diarios, neesaria el envío de correos de confirmacion;
-en caso de no contar con una no sera posible mandar correos de confirmacion; sin embargo
-para correr las pruebas se puede omitir y en la console se mostrara la ruta de un archivo con el
+Es necesario conter con una cuenta sendgrid.com, (gratuita para hasta
+100 correos diarios), para el proceso de confirmacion;
+en caso de no contar con una no sera posible mandar correos de confirmacion; las pruebas
+no la requiren y en la console se mostrara la ruta de un archivo con el
 contenido del correo que se hubiera enviado.
-
 
 ## Configuración
 
