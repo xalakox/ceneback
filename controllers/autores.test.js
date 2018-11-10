@@ -68,5 +68,18 @@ describe('controlador autores', () => {
         });
       expect(response.statusCode).toBe(200);
     });
+    test('deberia poder agregar un comentario a un maestro', async () => {
+      const profesor = profesores[faker.random.number({ min: 0, max: (profesores.length - 1) })].id;
+      const response = await request(app).post('/profesores/comentar')
+        .auth('', token)
+        .send({
+          profesor,
+          comentario: faker.lorem.paragraph(),
+        });
+      expect(response.statusCode).toBe(200);
+    });
+  });
+  test('deberia poder consultar el estado de un comentario', async () => {
+
   });
 });

@@ -11,7 +11,6 @@ module.exports = {
       id: uuidv1(),
       nombre: faker.name.firstName(),
       apellidos: `${faker.name.lastName()} ${faker.name.lastName()}`,
-      calificacionPromedio: faker.random.number({ min: 70, max: 100 }),
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
     }));

@@ -39,8 +39,28 @@ const evaluateProfesor = async (req, res, next) => {
   }
 };
 
+const commentProfesor = async (req, res, next) => {
+  const { profesor, comentario } = req.body;
+  if (!profesor || !comentario || comentario.trim().length < 1) {
+    return next(new Error('Informacion Invalida'));
+  }
+  try {
+    // agregamos un comentario del usuario
+    const newrecord = await sqldb.Comentarios.create({
+      profesor,
+      autor: req.author.email,
+      comentario,
+    });
+    res.json({ newrecord });
+  } catch (err) {
+    console.log(err);
+    return next(err);
+  }
+};
+
 
 module.exports = {
   getAll,
   evaluateProfesor,
+  commentProfesor,
 };

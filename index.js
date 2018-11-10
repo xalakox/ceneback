@@ -33,6 +33,7 @@ app.get('/profesores', profesoresController.getAll);
 
 // rutas con autorizacion
 app.post('/profesores/evaluar', checkAuthorToken, profesoresController.evaluateProfesor);
+app.post('/profesores/comentar', checkAuthorToken, profesoresController.commentProfesor);
 
 if (require.main === module) { // modulo no esta siendo requerido, arrancando servidor
   app.listen(port, () => console.log(`Listening on port ${port}!`));
