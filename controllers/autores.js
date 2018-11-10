@@ -62,9 +62,6 @@ const register = async (req, res, next) => {
 const confirmRegistration = async (req, res, next) => {
   const { signUpToken } = req.params;
   const { password, nombre } = req.body;
-  if (!signUpToken) {
-    return next(new Error('Token Invalido'));
-  }
   try {
     // verificamos el token
     const { emailCheck } = jwt.verify(signUpToken, process.env.PRIVATE_KEY);
