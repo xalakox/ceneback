@@ -7,7 +7,7 @@
     "start": "node index.js",
     "migrate": "sequelize db:migrate",
     "startdev": "nodemon -L index.js",
-    "test": "jest"
+    "test": "jest --forceExit --coverage"
   },
   "repository": {
     "type": "git",
