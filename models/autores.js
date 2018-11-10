@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Autores.checkCredentials = async ({ email, password } = {}) => {
     try {
-      const record = await Autores.findById(email);
+      const record = await Autores.findByPk(email);
       return record && await bcrypt.compare(password, record.passwordHash);
     } catch (err) {
       console.log('err while checking password', err);

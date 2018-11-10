@@ -1,4 +1,5 @@
 # CeneBack
+[![CircleCI](https://circleci.com/gh/xalakox/ceneback.svg?style=svg)](https://circleci.com/gh/xalakox/ceneback)
 
 Sistema para recibir evaluaciones y comentarios hacia magisterio y empleados
 de institucion educativa.

@@ -42,6 +42,6 @@ jobs:
       # migra la BD
       - run: npm run migrate
       # corre las pruebas
-      - run: npm test
+      - run: npm test -- --coverageReporters=text-lcov | ./node_modules/.bin/coveralls
 
 
