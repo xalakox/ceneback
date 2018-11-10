@@ -39,7 +39,7 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
       # migra la BD
-      - run: npm migrate
+      - run: npm run migrate
       # corre las pruebas
       - run: npm test
 
