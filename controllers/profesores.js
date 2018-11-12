@@ -78,6 +78,7 @@ const getProfesor = async (req, res, next) => {
             attributes: ['nombre'],
           }
         ],
+        order: [[ 'createdAt', 'desc' ]],
       }),
       sqldb.Profesores.findByPk(idProfesor),
     ]);
