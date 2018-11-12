@@ -1,12 +1,14 @@
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const cors = require('cors')
 
 const profesoresController = require('./controllers/profesores.js');
 const autoresController = require('./controllers/autores.js');
 
 const port = process.env.PORT || 3000;
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const checkAuthorToken = (req, res, next) => {

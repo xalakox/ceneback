@@ -37,12 +37,12 @@ const register = async (req, res, next) => {
   }
   try {
     const signUpToken = jwt.sign({ emailCheck: email }, process.env.PRIVATE_KEY, { expiresIn: '5 minutes' });
+    const link = `${process.env.URLFRONTEND || 'http://localhost:1324'}/confirmarCorreo?signUpToken=${signUpToken}`;
     const msg = {
       to: email,
       from: process.env.EMAILSENDER,
       subject: 'Confirmacion de correo electronico',
-      text: `Para confirmar su correo debe visitar el siquiente link: \
-      ${process.env.URLFRONTEND || 'http://localhost:1324/'}confirmarCorreo?signUpToken${signUpToken}`,
+      text: `Para confirmar su correo debe visitar el siquiente link: ${link}`,
     };
     if (process.env.SENDGRID) { // sendgrid se encuentra configurado
       sgMail.setApiKey(process.env.SENDGRID);
@@ -51,11 +51,11 @@ const register = async (req, res, next) => {
     } else { // modo de pruebas o sendgrid no configurado
       const filename = `${uuidv1()}.json`;
       await fs.writeFileSync(`${__dirname}/../node_modules/${filename}`, JSON.stringify({ ...msg, signUpToken }));
-      res.json({ filename });
+      res.json({ filename, link });
     }
   } catch (err) {
     console.log(err);
-    return next(err);
+    return res.status(500).send({ error: err.message || err });
   }
 };
 
@@ -74,7 +74,7 @@ const confirmRegistration = async (req, res, next) => {
     return res.json({ token });
   } catch (err) {
     console.log(err);
-    return next(err);
+    return res.status(500).send({ error: err.message || err });
   }
 };
 
