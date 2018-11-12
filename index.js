@@ -34,6 +34,7 @@ app.post('/autores/login', autoresController.loginAutor);
 app.get('/profesores', profesoresController.getAll);
 
 // rutas con autorizacion
+app.get('/profesores/:idProfesor', checkAuthorToken, profesoresController.getProfesor);
 app.post('/profesores/evaluar', checkAuthorToken, profesoresController.evaluateProfesor);
 app.post('/profesores/comentar', checkAuthorToken, profesoresController.commentProfesor);
 

@@ -58,9 +58,39 @@ const commentProfesor = async (req, res, next) => {
   }
 };
 
+const getProfesor = async (req, res, next) => {
+  const { idProfesor } = req.params;
+  if (!idProfesor || idProfesor.trim().length < 1) {
+    return next(new Error('Informacion Invalida'));
+  }
+  try {
+    // agregamos un comentario del usuario
+    const [comentarios, profesor] = await Promise.all([
+      sqldb.Comentarios.findAll({
+        attributes: ['id', 'createdAt', 'comentario'],
+        where: {
+          profesor: idProfesor,
+          contenidoInadecuado: false,
+        },
+        include: [
+          {
+            model: sqldb.Autores,
+            attributes: ['nombre'],
+          }
+        ],
+      }),
+      sqldb.Profesores.findByPk(idProfesor),
+    ]);
+    res.json({ comentarios, profesor });
+  } catch (err) {
+    console.log(err);
+    return next(err);
+  }
+}
 
 module.exports = {
   getAll,
   evaluateProfesor,
   commentProfesor,
+  getProfesor,
 };

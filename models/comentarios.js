@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   Comentarios.associate = (models) => {
     // associations can be defined here
-    Comentarios.belongsTo(models.Profesores, { foreignKey: 'FK_profesor' });
-    Comentarios.belongsTo(models.Autores, { foreignKey: 'FK_autor' });
+    Comentarios.belongsTo(models.Profesores, { foreignKey: 'profesor' });
+    Comentarios.belongsTo(models.Autores, { foreignKey: 'autor' });
   };
   return Comentarios;
 };
