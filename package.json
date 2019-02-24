@@ -48,7 +48,7 @@
     "jsonwebtoken": "^8.3.0",
     "mysql2": "^1.6.1",
     "natural": "^0.6.2",
-    "nodemon": "^1.18.5",
+    "nodemon": "^1.18.10",
     "ramda": "^0.25.0",
     "sequelize": "^4.41.0",
     "sequelize-cli": "^5.2.0",
