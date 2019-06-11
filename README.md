@@ -24,7 +24,7 @@ Se debe crear un archivo .env que debera contener una llave privada, ejemplo de 
 PRIVATE_KEY=secret
 SENGRID=llave_api_de_sendgrid
 EMAILSENDER=autor_del_correo_de_confirmacion
-URLSISTEMA=url_del_sistema
+URLFRONTEND=url_del_sistema
 ```
 
 ## Inicio del sistema
