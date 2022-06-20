@@ -50,7 +50,7 @@
     "natural": "^0.6.2",
     "nodemon": "^2.0.0",
     "ramda": "^0.25.0",
-    "sequelize": "^5.3.0",
+    "sequelize": "^6.19.1",
     "sequelize-cli": "^5.2.0",
     "uuid": "^3.3.2"
   }
