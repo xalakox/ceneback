@@ -45,7 +45,7 @@
     "bcrypt": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "mysql2": "^1.6.1",
     "natural": "^0.6.2",
     "nodemon": "^2.0.0",
