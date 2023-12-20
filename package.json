@@ -41,8 +41,8 @@
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
-    "bcrypt": "^3.0.2",
+    "@sendgrid/mail": "^7.0.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
@@ -50,7 +50,7 @@
     "natural": "^0.6.2",
     "nodemon": "^2.0.0",
     "ramda": "^0.25.0",
-    "sequelize": "^5.3.0",
+    "sequelize": "^6.1.0",
     "sequelize-cli": "^5.2.0",
     "uuid": "^3.3.2"
   }
